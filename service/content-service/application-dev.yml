@@ -24,7 +24,14 @@ spring:
             spring.json.trusted.packages: '*'
   
 
-
+eureka:
+  instance:
+    preferIpAddress: true
+  client:
+    fetchRegistry: true
+    registerWithEureka: true
+    serviceUrl:
+      defaultZone: http://167.172.78.79:8761/eureka/
 #logging:
 #  level:
 #    org:
