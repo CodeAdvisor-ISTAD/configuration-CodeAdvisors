@@ -6,9 +6,9 @@ spring:
       uri: mongodb://localhost:27017/content-service
   kafka:
     bootstrap-servers:
-      - 167.172.78.79:9092
-      - 167.172.78.79:9093
-      - 167.172.78.79:9094
+    - 167.172.78.79:9092
+    - 167.172.78.79:9093
+    - 167.172.78.79:9094
     consumer:
       group-id: content-service
       auto-offset-reset: latest
@@ -18,11 +18,10 @@ spring:
         spring.json.trusted.packages: '*'
 
     producer:
-        key-serializer: org.apache.kafka.common.serialization.StringSerializer
-        value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
-        properties:
-            spring.json.trusted.packages: '*'
-  
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+      properties:
+        spring.json.trusted.packages: '*'
 
 eureka:
   instance:
