@@ -1,10 +1,9 @@
 # content-service : dev
 
 spring:
-  
-data:
-  mongodb:
-    uri: mongodb://localhost:27017/content-service
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/content-service
   kafka:
     bootstrap-servers:
       - 167.172.78.79:9092
@@ -23,6 +22,8 @@ data:
         value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
         properties:
             spring.json.trusted.packages: '*'
+  
+
 
 #logging:
 #  level:
