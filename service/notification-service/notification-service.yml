@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: notification-service
+  data:
+    mongodb:
+      uri: mongodb://admin:Code%40Advisors2024@34.50.73.18:27017/db-notification?authSource=admin
+  kafka:
+    bootstrap-servers: 206.189.159.20:9092
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+  cloud:
+    stream:
+      bindings:
+        notificationProcessor-in-0:
+          destination: notifications
+          content-type: application/json
+        notificationProcessor-out-0:
+          destination: processed-notifications
+          content-type: application/json
+eureka:
+  client:
+    service-url:
+      defaultZone: http://167.172.78.79:8761/eureka
+  instance:
+    prefer-ip-address: true
+
+server:
+  port: 8084
