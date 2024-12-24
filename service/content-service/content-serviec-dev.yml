@@ -1,6 +1,14 @@
 # content-service : dev
+server:
+  port: 8082
 
+  
 spring:
+  data:
+    mongodb:
+      uri: mongodb://admin:Code%40Advisors2024@34.50.73.18:27017/
+      authentication-database: admin
+      database: content-service
   # data:
   #   mongodb:
   #     uri: mongodb://localhost:27017/content-service
