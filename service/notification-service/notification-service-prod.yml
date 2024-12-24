@@ -5,7 +5,10 @@ spring:
     mongodb:
       uri: mongodb://admin:Code%40Advisors2024@34.50.73.18:27017/db-notification?authSource=admin
   kafka:
-    bootstrap-servers: 206.189.159.20:9092
+    bootstrap-servers:
+    - 167.172.78.79:9092
+    - 167.172.78.79:9093
+    - 167.172.78.79:9094
     producer:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
