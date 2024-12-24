@@ -36,5 +36,4 @@ eureka:
 #    org:
 #      springframework:
 #        kafka: debug
-server:
-  port: 8082
+
