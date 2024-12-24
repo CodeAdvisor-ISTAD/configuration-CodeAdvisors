@@ -1,9 +1,9 @@
 # content-service : dev
 
 spring:
-  data:
-    mongodb:
-      uri: mongodb://localhost:27017/content-service
+  # data:
+  #   mongodb:
+  #     uri: mongodb://localhost:27017/content-service
   kafka:
     bootstrap-servers:
     - 167.172.78.79:9092
@@ -30,11 +30,11 @@ eureka:
     fetchRegistry: true
     registerWithEureka: true
     serviceUrl:
-      defaultZone: http://localhost:8761/eureka/
+      defaultZone: http://167.172.78.79:8761/eureka/
 #logging:
 #  level:
 #    org:
 #      springframework:
 #        kafka: debug
 server:
-  port: 8081
+  port: 8082
