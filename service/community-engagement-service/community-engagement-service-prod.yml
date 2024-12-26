@@ -10,18 +10,6 @@ spring:
     - 167.172.78.79:9092
     - 167.172.78.79:9093
     - 167.172.78.79:9094
-    consumer:
-      group-id: community-engagement-group  # Set your consumer group ID here
-      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-      value-deserializer: org.springframework.kafka.core.JsonDeserializer  # Use JsonDeserializer
-      properties:
-        spring:
-          kafka:
-            consumer:
-              value-deserializer:
-                # Specify the class of the object being deserialized
-                value-deserializer-class: com.example.CommentCreatedEvent  # Your class here
-        auto-offset-reset: earliest  # Start reading from the earliest offset if no previous offset exists
     producer:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
