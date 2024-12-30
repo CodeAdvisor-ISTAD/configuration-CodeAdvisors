@@ -1,0 +1,63 @@
+
+spring:
+  kafka:
+    bootstrap-servers:
+      - 167.172.78.79:9092
+      - 167.172.78.79:9093
+      - 167.172.78.79:9094
+
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+      properties:
+        spring.json.trusted.packages: "*"
+    consumer:
+      group-id: identity-service
+      auto-offset-reset: latest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      properties:
+        spring.json.trusted.packages: "*"
+  jpa:
+    hibernate:
+      ddl-auto: update
+  datasource:
+    url: jdbc:postgresql://34.50.73.18:5431/oauth2
+    username: oauth2
+    password: Code@Advisors2024
+    driver-class-name: org.postgresql.Driver
+  servlet:
+    multipart:
+      max-request-size: 10MB
+      max-file-size: 10MB
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: istad.codeadvisors@gmail.com
+    password: urfl rzjr zbcn jsvn
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
+
+server:
+  port: 9090
+
+logging:
+  level:
+    org:
+      springframework:
+#        web: DEBUG
+#        mail: DEBUG
+        security: DEBUG
+eureka:
+  instance:
+    preferIpAddress: true
+  client:
+    fetchRegistry: true
+    registerWithEureka: true
+    serviceUrl:
+      defaultZone: http://167.172.78.79:8761/eureka/
