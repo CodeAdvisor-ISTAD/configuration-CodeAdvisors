@@ -10,6 +10,10 @@ spring:
     - 167.172.78.79:9092
     - 167.172.78.79:9093
     - 167.172.78.79:9094
+    consumer:
+      group-id: my-consumer-group  # Specify the consumer group
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.ErrorHandlingDeserializer
     producer:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
