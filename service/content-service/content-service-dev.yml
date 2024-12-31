@@ -35,7 +35,7 @@ spring:
       #   - 167.172.78.79:9092
       #   - 167.172.78.79:9093
       #   - 167.172.78.79:9094
-      group-id: user-service
+      group-id: content-service
       auto-offset-reset: latest
       key-deserializer: org.springframework.kafka.support.serializer.ErrorHandlingDeserializer
       value-deserializer: co.istad.content_service.config.kafka.BaseProducerDeserializer
