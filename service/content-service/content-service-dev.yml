@@ -24,7 +24,8 @@ spring:
     consumer:
       group-id: content-service
       auto-offset-reset: latest
-      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      # key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      key-deserializer: org.springframework.kafka.support.serializer.ErrorHandlingDeserializer
       value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
       properties:
         spring.json.trusted.packages: "*"
