@@ -16,13 +16,29 @@ spring:
     consumer:
       group-id: notification-group
       auto-offset-reset: earliest
-      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-      value-deserializer: io.confluent.kafka.serializers.KafkaAvroDeserializer
+      key-deserializer: org.springframework.kafka.support.serializer.ErrorHandlingDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.ErrorHandlingDeserializer
       properties:
-        schema.registry.url: http://206.189.159.20:8998
-        schema.registry.request.timeout.ms: 10000
-        schema.registry.connection.timeout.ms: 10000
-        specific-avro-reader: true
+        spring:
+          deserializer:
+            key:
+              delegate: org.apache.kafka.common.serialization.StringDeserializer
+            value:
+              delegate: io.confluent.kafka.serializers.KafkaAvroDeserializer
+
+    properties:
+      schema:
+        registry:
+          url: http://206.189.159.20:8998
+          request:
+            timeout:
+              ms: 5000
+          connection:
+            timeout:
+              ms: 5000
+      specific:
+        avro:
+          reader: true
 
     listener:
       missing-topics-fatal: false
