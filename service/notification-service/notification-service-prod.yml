@@ -12,6 +12,37 @@ spring:
     producer:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+
+    consumer:
+      group-id: notification-group
+      auto-offset-reset: earliest
+      key-deserializer: org.springframework.kafka.support.serializer.ErrorHandlingDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.ErrorHandlingDeserializer
+      properties:
+        spring:
+          deserializer:
+            key:
+              delegate: org.apache.kafka.common.serialization.StringDeserializer
+            value:
+              delegate: io.confluent.kafka.serializers.KafkaAvroDeserializer
+
+    properties:
+      schema:
+        registry:
+          url: http://206.189.159.20:8998
+          request:
+            timeout:
+              ms: 5000
+          connection:
+            timeout:
+              ms: 5000
+      specific:
+        avro:
+          reader: true
+
+    listener:
+      missing-topics-fatal: false
+
   cloud:
     stream:
       bindings:
