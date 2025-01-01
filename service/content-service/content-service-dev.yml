@@ -30,24 +30,10 @@ spring:
     #   properties:
     #     spring.json.trusted.packages: "*"
     consumer:
-      enable-auto-commit: true
-      # bootstrap-servers:
-      #   - 167.172.78.79:9092
-      #   - 167.172.78.79:9093
-      #   - 167.172.78.79:9094
-      group-id: content-service
-      auto-offset-reset: latest
       key-deserializer: org.springframework.kafka.support.serializer.ErrorHandlingDeserializer
       value-deserializer: co.istad.content_service.config.kafka.BaseProducerDeserializer
-#      value-deserializer: org.springframework.kafka.support.serializer.ErrorHandlingDeserializer
       properties:
-        spring:
-          json:
-            trusted:
-              packages: '*'
-        spring.deserializer.key.delegate.class: org.apache.kafka.common.serialization.StringDeserializer
-        spring.deserializer.value.delegate.class: org.springframework.kafka.support.serializer.JsonDeserializer
-##        spring.json.value.default.type: istad.codeadvisor.userservice.config.kafka.producer.ContentProducer
+        spring.json.trusted.packages: "*"
         spring.json.value.default.type: co.istad.content_service.config.kafka.BaseProducer
 
     producer:
