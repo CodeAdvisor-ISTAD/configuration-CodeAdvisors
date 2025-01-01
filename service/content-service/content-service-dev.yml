@@ -30,11 +30,11 @@ spring:
     #   properties:
     #     spring.json.trusted.packages: "*"
     consumer:
-      group-id: content-service
-      value-deserializer: co.istad.content_service.config.kafka.KafkaEventDeserializer
+      key-deserializer: org.springframework.kafka.support.serializer.ErrorHandlingDeserializer
+      value-deserializer: co.istad.content_service.config.kafka.BaseProducerDeserializer
       properties:
         spring.json.trusted.packages: "*"
-        spring.json.use.type.headers: false
+        spring.json.value.default.type: co.istad.content_service.config.kafka.BaseProducer
 
     producer:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
