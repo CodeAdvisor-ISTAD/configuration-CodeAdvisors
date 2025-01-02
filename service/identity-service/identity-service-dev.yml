@@ -4,7 +4,6 @@ spring:
       - 167.172.78.79:9092
       - 167.172.78.79:9093
       - 167.172.78.79:9094
-
     producer:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
@@ -17,6 +16,14 @@ spring:
     #   value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
     #   properties:
     #     spring.json.trusted.packages: "*"
+    # security:
+    #   protocol: SSL
+    # ssl:
+    #   trust-store-location: classpath*:kafka.server.truststore.jks
+    #   trust-store-password: password123
+    #   key-store-location: classpath*:kafka.server.keystore.jks
+    #   key-store-password: password123
+    #   key-password: password123
   jpa:
     hibernate:
       ddl-auto: update
