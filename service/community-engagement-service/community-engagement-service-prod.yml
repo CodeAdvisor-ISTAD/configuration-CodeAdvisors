@@ -7,6 +7,14 @@ spring:
       authentication-database: admin
       database: community-engagement
   kafka:
+    security:
+      protocol: SSL
+    ssl:
+      trust-store-location: classpath:kafka.server.truststore.jks
+      trust-store-password: password123
+      key-store-location: classpath:kafka.server.keystore.jks
+      key-store-password: password123
+      key-password: password123
     bootstrap-servers:
       - 202.178.125.77:29093
       - 202.178.125.77:39093
