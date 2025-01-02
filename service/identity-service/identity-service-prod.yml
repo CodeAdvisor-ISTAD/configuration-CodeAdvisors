@@ -22,7 +22,7 @@ spring:
     hibernate:
       ddl-auto: update
   datasource:
-    url: jdbc:postgresql://34.50.73.18:5431/oauth2
+    url: jdbc:postgresql://202.178.125.77:5431/oauth2
     username: oauth2
     password: Code@Advisors2024
     driver-class-name: org.postgresql.Driver
