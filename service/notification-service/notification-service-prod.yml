@@ -3,13 +3,13 @@ spring:
     name: notification-service
   data:
     mongodb:
-      uri: mongodb://admin:Code%40Advisors2024@34.50.73.18:27017/db-notification?authSource=admin
+      uri: mongodb://admin:Code%40Advisors2024@202.178.125.77:27017/db-notification?authSource=admin
   kafka:
     bootstrap-servers:
       - 202.178.125.77:29093
       - 202.178.125.77:39093
       - 202.178.125.77:49093
-
+      
     security:
       protocol: SSL
     ssl:
