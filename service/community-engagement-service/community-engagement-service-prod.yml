@@ -1,4 +1,3 @@
-
 spring:
   application:
     name: comunnity-engagement-service
@@ -9,9 +8,9 @@ spring:
       database: community-engagement
   kafka:
     bootstrap-servers:
-    - 167.172.78.79:9092
-    - 167.172.78.79:9093
-    - 167.172.78.79:9094
+      - 202.178.125.77:29093
+      - 202.178.125.77:39093
+      - 202.178.125.77:49093
     producer:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
