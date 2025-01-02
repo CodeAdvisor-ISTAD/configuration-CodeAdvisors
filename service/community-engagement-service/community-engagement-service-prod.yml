@@ -2,9 +2,11 @@
 spring:
   application:
     name: comunnity-engagement-service
-#  data:
-#    mongodb:
-#      uri: mongodb://admin:Code%40Advisors2024@34.50.73.18:27017/db-community-engagement?authSource=admin
+  data:
+    mongodb:
+      uri: mongodb://admin:Code%40Advisors2024@202.178.125.77:5403/
+      authentication-database: admin
+      database: community-engagement
   kafka:
     bootstrap-servers:
     - 167.172.78.79:9092
