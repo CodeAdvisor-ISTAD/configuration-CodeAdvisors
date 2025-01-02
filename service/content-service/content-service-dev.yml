@@ -18,9 +18,12 @@ spring:
   #     uri: mongodb://localhost:27017/content-service
   kafka:
     bootstrap-servers:
-      - 167.172.78.79:9092
-      - 167.172.78.79:9093
-      - 167.172.78.79:9094
+      # - 167.172.78.79:9092
+      # - 167.172.78.79:9093
+      # - 167.172.78.79:9094
+      - 202.178.125.77:29093
+      - 202.178.125.77:39093
+      - 202.178.125.77:49093
     # consumer:
     #   group-id: content-service
     #   auto-offset-reset: latest
@@ -33,7 +36,7 @@ spring:
       enable-auto-commit: true
       group-id: content-service
       auto-offset-reset: latest
-      key-deserializer: org.springframework.kafka.support.serializer.ErrorHandlingDeserializer
+      key-deseri7alizer: org.springframework.kafka.support.serializer.ErrorHandlingDeserializer
       value-deserializer: co.istad.content_service.config.kafka.BaseProducerDeserializer
       #      value-deserializer: org.springframework.kafka.support.serializer.ErrorHandlingDeserializer
       properties:
