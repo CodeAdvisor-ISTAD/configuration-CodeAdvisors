@@ -9,6 +9,15 @@ spring:
       - 202.178.125.77:29093
       - 202.178.125.77:39093
       - 202.178.125.77:49093
+      
+    security:
+      protocol: SSL
+    ssl:
+      trust-store-location: classpath:kafka.server.truststore.jks
+      trust-store-password: password123
+      key-store-location: classpath:kafka.server.keystore.jks
+      key-store-password: password123
+      key-password: password123
 
     producer:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
@@ -18,7 +27,6 @@ spring:
       enable-auto-commit: true
       group-id: notification-service
       auto-offset-reset: latest
-#      key-deseri7alizer: org.springframework.kafka.support.serializer.ErrorHandlingDeserializer
       properties:
         spring:
           json:
@@ -26,33 +34,6 @@ spring:
               packages: "*"
         spring.deserializer.key.delegate.class: org.apache.kafka.common.serialization.StringDeserializer
         spring.deserializer.value.delegate.class: org.springframework.kafka.support.serializer.JsonDeserializer
-
-    # consumer:
-    #   group-id: notification-group
-    #   auto-offset-reset: earliest
-    #   key-deserializer: org.springframework.kafka.support.serializer.ErrorHandlingDeserializer
-    #   value-deserializer: org.springframework.kafka.support.serializer.ErrorHandlingDeserializer
-    #   properties:
-    #     spring:
-    #       deserializer:
-    #         key:
-    #           delegate: org.apache.kafka.common.serialization.StringDeserializer
-    #         value:
-    #           delegate: io.confluent.kafka.serializers.KafkaAvroDeserializer
-
-    # properties:
-    #   schema:
-    #     registry:
-    #       url: http://206.189.159.20:8998
-    #       request:
-    #         timeout:
-    #           ms: 5000
-    #       connection:
-    #         timeout:
-    #           ms: 5000
-    #   specific:
-    #     avro:
-    #       reader: true
 
     listener:
       missing-topics-fatal: false
