@@ -10,10 +10,7 @@ spring:
     url: jdbc:postgresql://202.178.125.77:5401/postgres
     username: admin
     password: Code@Advisors2024
-  jpa:
-    hibernate:
-      ddl-auto: update
-    show-sql: true
+  
 
 logging:
   level:
