@@ -18,8 +18,7 @@ spring:
       enable-auto-commit: true
       group-id: notification-service
       auto-offset-reset: latest
-      key-deseri7alizer: org.springframework.kafka.support.serializer.ErrorHandlingDeserializer
-      value-deserializer: co.istad.content_service.config.kafka.BaseProducerDeserializer
+#      key-deseri7alizer: org.springframework.kafka.support.serializer.ErrorHandlingDeserializer
       properties:
         spring:
           json:
