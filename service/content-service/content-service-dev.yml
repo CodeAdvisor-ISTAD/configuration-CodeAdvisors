@@ -18,12 +18,13 @@ spring:
   #     uri: mongodb://localhost:27017/content-service
   kafka:
     bootstrap-servers:
-      # - 167.172.78.79:9092
-      # - 167.172.78.79:9093
-      # - 167.172.78.79:9094
       - 202.178.125.77:29093
       - 202.178.125.77:39093
       - 202.178.125.77:49093
+
+      # - 167.172.78.79:9092
+      # - 167.172.78.79:9093
+      # - 167.172.78.79:9094
     # consumer:
     #   group-id: content-service
     #   auto-offset-reset: latest
