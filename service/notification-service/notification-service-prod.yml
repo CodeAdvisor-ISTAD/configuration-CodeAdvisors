@@ -15,10 +15,24 @@ spring:
       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
 
     consumer:
-      group-id: notification-group
-      auto-offset-reset: earliest
-      key-deserializer: org.springframework.kafka.support.serializer.ErrorHandlingDeserializer
-      value-deserializer: org.springframework.kafka.support.serializer.ErrorHandlingDeserializer
+      enable-auto-commit: true
+      group-id: notification-service
+      auto-offset-reset: latest
+      key-deseri7alizer: org.springframework.kafka.support.serializer.ErrorHandlingDeserializer
+      value-deserializer: co.istad.content_service.config.kafka.BaseProducerDeserializer
+      properties:
+        spring:
+          json:
+            trusted:
+              packages: "*"
+        spring.deserializer.key.delegate.class: org.apache.kafka.common.serialization.StringDeserializer
+        spring.deserializer.value.delegate.class: org.springframework.kafka.support.serializer.JsonDeserializer
+
+    # consumer:
+    #   group-id: notification-group
+    #   auto-offset-reset: earliest
+    #   key-deserializer: org.springframework.kafka.support.serializer.ErrorHandlingDeserializer
+    #   value-deserializer: org.springframework.kafka.support.serializer.ErrorHandlingDeserializer
     #   properties:
     #     spring:
     #       deserializer:
