@@ -28,7 +28,6 @@ spring:
       group-id: notification-service
       auto-offset-reset: latest
       key-deserializer: org.springframework.kafka.support.serializer.ErrorHandlingDeserializer
-      value-deserializer: org.springframework.kafka.support.serializer.ErrorHandlingDeserializer
       properties:
         spring:
           json:
