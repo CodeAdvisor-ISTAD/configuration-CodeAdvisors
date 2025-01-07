@@ -1,5 +1,8 @@
 # forum-service : dev
 spring:
+  jpa:
+    hibernate:
+      ddl-auto: update
   security:
     oauth2:
       resourceserver:
