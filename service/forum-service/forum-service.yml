@@ -10,7 +10,7 @@ spring:
           issuer-uri: http://127.0.0.1:9090
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://202.178.125.77:5401/postgres
+    url: jdbc:postgresql://202.178.125.77:5401/forum
     username: admin
     password: Code@Advisors2024
   
