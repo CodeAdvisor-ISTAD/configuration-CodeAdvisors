@@ -1,9 +1,9 @@
 spring:
   kafka:
     bootstrap-servers:
-      - 202.178.125.77:29093
-      - 202.178.125.77:39093
-      - 202.178.125.77:49093   
+      - 167.172.78.79:29093
+      - 167.172.78.79:39093
+      - 167.172.78.79:49093   
     producer:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
@@ -41,7 +41,6 @@ spring:
           starttls:
             enable: true
 
-
 server:
   port: 9090
 
@@ -49,8 +48,8 @@ logging:
   level:
     org:
       springframework:
-#        web: DEBUG
-#        mail: DEBUG
+        #        web: DEBUG
+        #        mail: DEBUG
         security: DEBUG
 eureka:
   instance:
