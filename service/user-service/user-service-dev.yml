@@ -1,7 +1,7 @@
 spring:
-  # data:
-  #   mongodb:
-  #     uri: mongodb://localhost:27017/db-edit-profile
+  data:
+    mongodb:
+      uri: mongodb://202.178.125.77:5403/user-service
 
 eureka:
   instance:
