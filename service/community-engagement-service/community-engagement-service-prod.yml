@@ -3,9 +3,10 @@ spring:
     name: comunnity-engagement-service
   data:
     mongodb:
-      uri: mongodb://admin:Code%40Advisors2024@202.178.125.77:5403/
-      authentication-database: admin
-      database: community-engagement
+      uri: mongodb://202.178.125.77:5403/content-service
+      #uri: mongodb://admin:Code%40Advisors2024@202.178.125.77:5403/
+      #authentication-database: admin
+      #database: community-engagement
   kafka:
     security:
       protocol: SSL
