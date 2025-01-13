@@ -1,32 +1,5 @@
 spring:
-  kafka:
-    bootstrap-servers:
-      - 167.172.78.79:29093
-      - 167.172.78.79:39093
-      - 167.172.78.79:49093   
-    producer:
-      key-serializer: org.apache.kafka.common.serialization.StringSerializer
-      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
-      properties:
-        spring.json.trusted.packages: "*"
-    consumer:
-      enable-auto-commit: true
-      group-id: notification-service
-      auto-offset-reset: latest
-      key-deserializer: org.springframework.kafka.support.serializer.ErrorHandlingDeserializer
-      value-deserializer: org.springframework.kafka.support.serializer.ErrorHandlingDeserializer
-      properties:
-        spring.json.trusted.packages: "*"
-        spring.deserializer.key.delegate.class: org.apache.kafka.common.serialization.StringDeserializer
-        spring.deserializer.value.delegate.class: org.springframework.kafka.support.serializer.JsonDeserializer
-    security:
-      protocol: SSL
-    ssl:
-      trust-store-location: classpath:kafka.server.truststore.jks
-      trust-store-password: password123
-      key-store-location: classpath:kafka.server.keystore.jks
-      key-store-password: password123
-      key-password: password123
+  
   jpa:
     hibernate:
       ddl-auto: update
