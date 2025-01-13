@@ -3,7 +3,7 @@ spring:
     name: comunnity-engagement-service
   data:
     mongodb:
-      uri: mongodb://202.178.125.77:5403/content-service
+      uri: mongodb://202.178.125.77:5403/
       #uri: mongodb://admin:Code%40Advisors2024@202.178.125.77:5403/
       #authentication-database: admin
       #database: community-engagement
