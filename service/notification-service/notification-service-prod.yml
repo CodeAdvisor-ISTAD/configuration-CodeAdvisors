@@ -54,7 +54,7 @@ spring:
 eureka:
   client:
     service-url:
-      defaultZone: http://167.172.78.79:8761/eureka
+      defaultZone: https://eureka-service.cloudinator.cloud/eureka/
   instance:
     prefer-ip-address: true
 
