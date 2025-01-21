@@ -34,8 +34,6 @@ spring:
               - authorization_code
             scope: openid, profile, email
             redirect-uri: http://202.178.125.77:8168/login/oauth2/code/code-advisor
-  application:
-    name: gateway-server
   cloud:
     gateway:
       discovery:
