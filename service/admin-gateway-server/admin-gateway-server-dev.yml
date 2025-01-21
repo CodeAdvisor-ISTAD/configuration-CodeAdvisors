@@ -90,10 +90,10 @@ spring:
             - TokenRelay=
             - RewritePath=/users/(?<segment>.*),/$\{segment}
 
-        - id: codeAdvisor-ui # Register Frontend (NextJS)
+        - id: codeAdvisor-admin-ui # Register Frontend (NextJS)
           uri: http://127.0.0.1:3001
           predicates:
-            - Path=/**
+            - Path=/dashboard/**
           filters:
             - TokenRelay=
 
