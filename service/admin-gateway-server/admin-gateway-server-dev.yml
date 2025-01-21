@@ -93,7 +93,7 @@ spring:
         - id: codeAdvisor-admin-ui # Register Frontend (NextJS)
           uri: http://127.0.0.1:3001
           predicates:
-            - Path=/dashboard/**
+            - Path=/**
           filters:
             - TokenRelay=
 
