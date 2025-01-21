@@ -97,6 +97,14 @@ spring:
           filters:
             - TokenRelay=
 
+        - id: nextjs-static-assets
+          uri: http://127.0.0.1:3001  # Forward to Next.js frontend
+          predicates:
+            - Path=/static/**,/_next/**  # Match static asset paths
+          filters:
+            - TokenRelay=  # Ensure authentication is enforced (optional for static assets)
+
+
 
 
 eureka:
