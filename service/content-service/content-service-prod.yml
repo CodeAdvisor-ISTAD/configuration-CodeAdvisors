@@ -7,18 +7,26 @@ spring:
     oauth2:
       resourceserver:
         jwt:
-          issuer-uri: http://127.0.0.1:9090
+          issuer-uri: http://202.178.125.77:9090
   data:
     mongodb:
-      uri: mongodb://localhost:27017/content-service
+      uri: mongodb://202.178.125.77:5403/content-service
+    # mongodb:
+    #   uri: mongodb://admin:Code%40Advisors2024@202.178.125.77:5403/
+    #   authentication-database: admin
+    #   database: content-service
   # data:
   #   mongodb:
   #     uri: mongodb://localhost:27017/content-service
   kafka:
     bootstrap-servers:
-      - 167.172.78.79:9092
-      - 167.172.78.79:9093
-      - 167.172.78.79:9094
+      - 167.172.78.79:29093
+      - 167.172.78.79:39093
+      - 167.172.78.79:49093
+
+      # - 167.172.78.79:9092
+      # - 167.172.78.79:9093
+      # - 167.172.78.79:9094
     # consumer:
     #   group-id: content-service
     #   auto-offset-reset: latest
@@ -31,7 +39,7 @@ spring:
       enable-auto-commit: true
       group-id: content-service
       auto-offset-reset: latest
-      key-deserializer: org.springframework.kafka.support.serializer.ErrorHandlingDeserializer
+      key-deseri7alizer: org.springframework.kafka.support.serializer.ErrorHandlingDeserializer
       value-deserializer: co.istad.content_service.config.kafka.BaseProducerDeserializer
       #      value-deserializer: org.springframework.kafka.support.serializer.ErrorHandlingDeserializer
       properties:
@@ -49,6 +57,14 @@ spring:
       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
       properties:
         spring.json.trusted.packages: "*"
+    security:
+      protocol: SSL
+    ssl:
+      trust-store-location: file:/app/kafka.server.truststore.jks
+      trust-store-password: password123
+      key-store-location: file:/app/kafka.server.keystore.jks
+      key-store-password: password123
+      key-password: password123
 
 eureka:
   instance:
@@ -57,7 +73,7 @@ eureka:
     fetchRegistry: true
     registerWithEureka: true
     serviceUrl:
-      defaultZone: http://167.172.78.79:8761/eureka/
+      defaultZone: http://202.178.125.77:1761/eureka/
 #logging:
 #  level:
 #    org:
