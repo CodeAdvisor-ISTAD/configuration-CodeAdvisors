@@ -97,12 +97,7 @@ spring:
           filters:
             - TokenRelay=
 
-        - id: dashboard-route
-          uri: http://127.0.0.1:3001  # Forward to Next.js frontend
-          predicates:
-            - Path=/dashboard/**
-          filters:
-            - TokenRelay=  # Ensure authentication is enforced
+
 
 eureka:
   instance:
