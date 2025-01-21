@@ -73,7 +73,7 @@ eureka:
     fetchRegistry: true
     registerWithEureka: true
     serviceUrl:
-      defaultZone: http://202.178.125.77:1761/eureka/
+      defaultZone: http://202.178.125.77:1761eureka/
 #logging:
 #  level:
 #    org:
