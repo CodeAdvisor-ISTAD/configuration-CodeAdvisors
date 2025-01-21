@@ -91,6 +91,14 @@ spring:
           filters:
             - TokenRelay=
 
+        - id: notification-service
+          uri: http://202.178.125.77:1084
+          predicates:
+            - Path=/notifications/**
+          filters:
+            - TokenRelay=
+            - RewritePath=/notifications/(?<segment>.*),/$\{segment}
+
 
 eureka:
   instance:
