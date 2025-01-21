@@ -96,6 +96,7 @@ spring:
             - Path=/admin/login  # Match /admin/login
           filters:
             - RewritePath=/admin/login,/admin/login  # Rewrite path if needed
+            - TokenRelay=  # Ensure authentication is enforced
 
         - id: nextjs-dashboard
           uri: http://127.0.0.1:3001  # Forward to Next.js frontend
