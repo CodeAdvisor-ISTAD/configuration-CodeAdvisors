@@ -103,6 +103,13 @@ spring:
             - Path=/static/**,/_next/**  # Match static asset paths
           filters:
             - TokenRelay=  # Ensure authentication is enforced (optional for static assets)
+        
+        - id: identity-service-admin-login
+          uri: http://127.0.0.1:9090  # Forward to identity service
+          predicates:
+            - Path=/login  # Match /login
+          filters:
+            - RewritePath=/login,/admin/login  # Rewrite /login to /admin/login
 
 
 
