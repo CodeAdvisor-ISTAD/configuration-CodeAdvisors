@@ -72,3 +72,8 @@ eureka:
     registerWithEureka: true
     serviceUrl:
       defaultZone: http://202.178.125.77:1761/eureka/
+
+
+code-advisors:
+  ip: 202.178.125.77
+  port: 9090
