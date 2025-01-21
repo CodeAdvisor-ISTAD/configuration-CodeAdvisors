@@ -10,8 +10,8 @@ spring:
             client-id: 702679122858-vjsaia60jt9t5thiug8rqpv1rup2f1i9.apps.googleusercontent.com
             client-secret: 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
           github:
-            client-id: Iv23liBU3E9AkNiEfed2
-            client-secret: cca664d184ea46d005f9602f7e9ab1fbb560ba07
+            client-id: Iv23lipMLL5PQnt5TVEg
+            client-secret: efe4925156f095775fcb8ccc4f9dfaa199caa22d
   kafka:
     bootstrap-servers:
       - 167.172.78.79:29093
@@ -22,6 +22,16 @@ spring:
       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
       properties:
         spring.json.trusted.packages: "*"
+    consumer:
+      group-id: user-service
+      auto-offset-reset: earliest
+      key-deserializer: org.springframework.kafka.support.serializer.ErrorHandlingDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.ErrorHandlingDeserializer
+      properties:
+        spring.json.trusted.packages: '*'
+        spring.deserializer.key.delegate.class: org.apache.kafka.common.serialization.StringDeserializer
+        spring.deserializer.value.delegate.class: org.springframework.kafka.support.serializer.JsonDeserializer
+        spring.json.value.default.type: co.istad.identityservice.config.kafka.eventClass.UpdateUserEvent
     security:
       protocol: SSL
     ssl:
@@ -77,4 +87,3 @@ eureka:
 code-advisors:
   ip: 202.178.125.77
   port: 9090
-  
