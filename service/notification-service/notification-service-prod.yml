@@ -12,15 +12,24 @@ spring:
       - 167.172.78.79:29093
       - 167.172.78.79:39093
       - 167.172.78.79:49093
-      
+
     security:
       protocol: SSL
     ssl:
-      trust-store-location: classpath:kafka.server.truststore.jks
+      trust-store-location: file:/app/kafka.server.truststore.jks
       trust-store-password: password123
-      key-store-location: classpath:kafka.server.keystore.jks
+      key-store-location: file:/app/kafka.server.keystore.jks
       key-store-password: password123
       key-password: password123
+      
+    # security:
+    #   protocol: SSL
+    # ssl:
+    #   trust-store-location: classpath:kafka.server.truststore.jks
+    #   trust-store-password: password123
+    #   key-store-location: classpath:kafka.server.keystore.jks
+    #   key-store-password: password123
+    #   key-password: password123
 
     producer:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
