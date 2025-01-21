@@ -60,8 +60,15 @@ spring:
             - TokenRelay=
             - RewritePath=/contents/(?<segment>.*),/$\{segment}
 
+        # - id: forum-code-advisors
+        #   uri: http://127.0.0.1:8081
+        #   predicates:
+        #     - Path=/forums/**
+        #   filters:
+        #     - TokenRelay=
+        #     - RewritePath=/forums/(?<segment>.*),/$\{segment}
         - id: forum-code-advisors
-          uri: http://127.0.0.1:8081
+          uri: http://202.178.125.77:1081
           predicates:
             - Path=/forums/**
           filters:
