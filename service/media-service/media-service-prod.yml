@@ -23,7 +23,7 @@ spring:
       max-request-size: 10MB
 
 media:
-  url: http://167.172.78.79:8090/api/v1/files/preview
+  url: https://media.panda.engineer/api/v1/files/preview
 
 eureka:
   instance:
