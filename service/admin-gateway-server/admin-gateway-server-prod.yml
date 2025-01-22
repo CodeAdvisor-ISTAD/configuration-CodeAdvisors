@@ -84,12 +84,12 @@ spring:
             - TokenRelay=
             - RewritePath=/users/(?<segment>.*),/$\{segment}
 
-        - id: codeAdvisor-ui # Register Frontend (NextJS)
-          uri: http://202.178.125.77:1000
-          predicates:
-            - Path=/**
-          filters:
-            - TokenRelay=
+        # - id: codeAdvisor-ui # Register Frontend (NextJS)
+        #   uri: http://202.178.125.77:1000
+        #   predicates:
+        #     - Path=/**
+        #   filters:
+        #     - TokenRelay=
 
         - id: notification-service
           uri: http://202.178.125.77:1084
