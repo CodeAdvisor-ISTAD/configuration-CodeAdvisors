@@ -32,7 +32,7 @@
               authorization-grant-type:
                 - authorization_code
               scope: openid, profile, email
-              redirect-uri: http://127.0.0.1:8168/login/oauth2/code/code-advisor
+              redirect-uri: http://127.0.0.1:8169/login/oauth2/code/code-advisor
     cloud:
       gateway:
         discovery:
