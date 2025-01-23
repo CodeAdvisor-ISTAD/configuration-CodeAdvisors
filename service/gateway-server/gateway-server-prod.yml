@@ -108,3 +108,10 @@ eureka:
     registerWithEureka: true
     serviceUrl:
       defaultZone: http://202.178.125.77:1761/eureka/
+
+logging:
+  level:
+    org:
+      springframework:
+        security: DEBUG
+        web: DEBUG
