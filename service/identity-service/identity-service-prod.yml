@@ -87,3 +87,6 @@ eureka:
 code-advisors:
   ip: 202.178.125.77
   port: 1168
+
+redirect:
+  url: https://code-advisors.istad.co/
