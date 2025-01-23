@@ -12,7 +12,7 @@ spring:
 #            user-info-uri: https://www.googleapis.com/oauth2/v3/userinfo
 #            user-name-attribute: sub
           code-advisor:
-            issuer-uri: http://202.178.125.77:9090
+            issuer-uri: https://identity.code-advisors.istad.co #http://202.178.125.77:9090
         registration:
 #           Register google Service
 #          google:
@@ -33,7 +33,7 @@ spring:
             authorization-grant-type:
               - authorization_code
             scope: openid, profile, email
-            redirect-uri: http://202.178.125.77:1168/login/oauth2/code/code-advisor
+            redirect-uri: https://code-advisors.istad.co/login/oauth2/code/code-advisor # http://202.178.125.77:1168/login/oauth2/code/code-advisor
   cloud:
     gateway:
       discovery:
@@ -45,7 +45,7 @@ spring:
         - SaveSession
       routes:
         - id: identity # Register Identity Service
-          uri: http://202.178.125.77:9090
+          uri: https://identity.code-advisors.istad.co # http://202.178.125.77:9090
           predicates:
             - Path=/identity/**
           filters:
