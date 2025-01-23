@@ -87,3 +87,6 @@ eureka:
 code-advisors:
   ip: 127.0.0.1
   port: 8168
+
+redirect:
+  url: http://127.0.0.1:8168
