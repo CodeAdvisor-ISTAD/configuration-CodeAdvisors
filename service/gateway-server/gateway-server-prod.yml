@@ -29,7 +29,7 @@ spring:
         - SaveSession
       routes:
         - id: identity # Register Identity Service
-          uri: http://identity.code-advisors.istad.co:9090
+          uri: http://202.178.125.77:9090
           predicates:
             - Path=/identity/**
           filters:
