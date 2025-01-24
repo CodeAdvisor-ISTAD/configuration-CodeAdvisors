@@ -90,3 +90,6 @@ code-advisors:
 
 redirect:
   url: http://127.0.0.1:8168
+
+issuer:
+  url: http://127.0.0.1:9090

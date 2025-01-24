@@ -90,3 +90,6 @@ code-advisors:
 
 redirect:
   url: https://code-advisors.istad.co/
+
+issuer:
+  url: https://identity.code-advisors.istad.co
