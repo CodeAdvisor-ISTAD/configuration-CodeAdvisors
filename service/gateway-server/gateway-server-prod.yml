@@ -30,7 +30,7 @@ spring:
         - SaveSession
       routes:
         - id: identity # Register Identity Service
-          uri: http://code-advisors-identity-service
+          uri: http://code-advisors-identity-service:9090
           predicates:
             - Path=/identity/**
           filters:
