@@ -1,5 +1,6 @@
 server:
   port: 8168
+  forward-headers-strategy: framework
 
 spring:
   security:
@@ -29,7 +30,7 @@ spring:
         - SaveSession
       routes:
         - id: identity # Register Identity Service
-          uri: lb://IDENTITY-SERVICE
+          uri: https://identity.code-advisors.istad.co
           predicates:
             - Path=/identity/**
           filters:
