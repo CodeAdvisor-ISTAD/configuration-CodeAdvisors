@@ -92,4 +92,4 @@ redirect:
   url: https://code-advisors.istad.co/
 
 issuer:
-  url: https://identity.code-advisors.istad.co
+  url: http://127.0.0.1:9090
