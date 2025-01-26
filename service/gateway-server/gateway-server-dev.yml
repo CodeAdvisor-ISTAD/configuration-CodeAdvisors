@@ -61,7 +61,7 @@ spring:
             - RewritePath=/notifications/(?<segment>.*),/$\{segment}
 
         - id: content-service # Register Frontend (NextJS)
-          uri: http://202.178.125.77:1082
+          uri: http://127.0.0.1:1082
           predicates:
             - Path=/contents/**
           filters:
