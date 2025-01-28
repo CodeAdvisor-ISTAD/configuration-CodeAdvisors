@@ -10,8 +10,8 @@ spring:
             client-id: 702679122858-vjsaia60jt9t5thiug8rqpv1rup2f1i9.apps.googleusercontent.com
             client-secret: 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
           github:
-            client-id: Iv23lipMLL5PQnt5TVEg
-            client-secret: efe4925156f095775fcb8ccc4f9dfaa199caa22d
+            client-id: Iv23ctxuu5KORhYj9WmU
+            client-secret: 72a0728424dd1934bd95919b5540ffb42f02abbd
   kafka:
     bootstrap-servers:
       - 167.172.78.79:29093
