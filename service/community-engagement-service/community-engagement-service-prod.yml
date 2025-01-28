@@ -8,8 +8,8 @@ spring:
           issuer-uri: http://202.178.125.77:9090
   data:
     mongodb:
-      uri: mongodb://localhost:27017/content-service
-      #uri: mongodb://202.178.125.77:5403/community-engagement
+      # uri: mongodb://localhost:27017/content-service
+      uri: mongodb://202.178.125.77:5403/community-engagement
       #uri: mongodb://admin:Code%40Advisors2024@202.178.125.77:5403/
       #authentication-database: admin
       #database: community-engagement
