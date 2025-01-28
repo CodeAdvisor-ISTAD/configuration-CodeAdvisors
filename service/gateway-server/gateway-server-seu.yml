@@ -18,7 +18,7 @@ spring:
             authorization-grant-type:
               - authorization_code
             scope: openid, profile, email, ADMIN, USER
-            redirect-uri: https://identity.code-advisors.istad.co/login/oauth2/code/code-advisor # http://202.178.125.77:1168/login/oauth2/code/code-advisor
+            redirect-uri: http://202.178.125.77:1168/login/oauth2/code/code-advisor
   cloud:
     gateway:
       discovery:
