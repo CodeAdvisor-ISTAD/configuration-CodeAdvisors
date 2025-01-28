@@ -7,7 +7,15 @@ spring:
   data:
     mongodb:
       uri: mongodb://202.178.125.77:5403/user-service
-
+  kafka:
+    security:
+      protocol: SSL
+    ssl:
+      trust-store-location: file:/app/kafka.server.truststore.jks
+      trust-store-password: password123
+      key-store-location: file:/app/kafka.server.keystore.jks
+      key-store-password: password123
+      key-password: password123
 eureka:
   instance:
     preferIpAddress: true
