@@ -1,4 +1,9 @@
 spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://202.178.125.77:9090
   data:
     mongodb:
       uri: mongodb://202.178.125.77:5403/user-service
