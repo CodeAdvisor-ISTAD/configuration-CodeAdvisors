@@ -1,1 +1,16 @@
+spring:
+  data:
+    mongodb:
+      uri: mongodb://202.178.125.77:5403/user-service
 
+eureka:
+  instance:
+    preferIpAddress: true
+  client:
+    fetchRegistry: true
+    registerWithEureka: true
+    serviceUrl:
+      defaultZone: http://202.178.125.77:1761/eureka/
+
+server:
+  port: 8085
