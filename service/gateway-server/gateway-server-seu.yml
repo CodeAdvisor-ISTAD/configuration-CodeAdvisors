@@ -8,7 +8,7 @@ spring:
       client:
         provider:
           code-advisor:
-            issuer-uri: https://identity.code-advisors.istad.co #http://202.178.125.77:9090 
+            issuer-uri: http://202.178.125.77:9090 
         registration:
           # Register CodeAdvisor Service
           code-advisor:
