@@ -85,7 +85,7 @@ spring:
             - RewritePath=/notifications/(?<segment>.*),/$\{segment}
 
         - id: community-engagement-service
-          uri: http://127.0.0.1:8086
+          uri: http://202.178.125.77:1086
           predicates:
             - Path=/ces/**
           filters:
