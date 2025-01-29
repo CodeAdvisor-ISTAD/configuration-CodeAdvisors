@@ -90,7 +90,7 @@ spring:
             - Path=/ces/**
           filters:
             - TokenRelay=
-            - RewritePath=/ces/(?<segment>.*),/$\{segment}
+            - RewritePath=/ces/(?<segment>.*), /ces/$\{segment}
 
 
 eureka:
