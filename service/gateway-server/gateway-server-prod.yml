@@ -84,6 +84,14 @@ spring:
             - TokenRelay=
             - RewritePath=/notifications/(?<segment>.*),/$\{segment}
 
+        - id: community-engagement-service
+          uri: http://202.178.125.77:1086
+          predicates:
+            - Path=/ces/**
+          filters:
+            - TokenRelay=
+            - RewritePath=/ces/(?<segment>.*),/$\{segment}
+
 
 eureka:
   instance:
