@@ -17,7 +17,7 @@ spring:
     security:
       protocol: SSL
     ssl:
-      trust-store-location: file:/app/kafka.server.truststore.jks
+      trust-store-location: classpath:kafka.server.truststore.jks
       trust-store-password: password123
       key-store-location: file:/app/kafka.server.keystore.jks
       key-store-password: password123
