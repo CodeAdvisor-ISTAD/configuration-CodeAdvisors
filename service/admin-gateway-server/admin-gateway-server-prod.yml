@@ -84,13 +84,6 @@ spring:
             - TokenRelay=
             - RewritePath=/users/(?<segment>.*),/$\{segment}
 
-        # - id: codeAdvisor-ui # Register Frontend (NextJS)
-        #   uri: http://202.178.125.77:1000
-        #   predicates:
-        #     - Path=/**
-        #   filters:
-        #     - TokenRelay=
-
         - id: notification-service
           uri: http://202.178.125.77:1084
           predicates:
@@ -98,6 +91,20 @@ spring:
           filters:
             - TokenRelay=
             - RewritePath=/notifications/(?<segment>.*),/$\{segment}
+
+        - id: nextjs-static-assets
+          uri: http://202.178.125.77:1001    # Forward to Next.js frontend
+          predicates:
+            - Path=/static/**,/_next/**  # Match static asset paths
+          filters:
+            - TokenRelay=  # Ensure authentication is enforced (optional for static assets)
+
+        - id: codeAdvisor-admin-ui
+          uri: http://202.178.125.77:1001  # Forward to Next.js frontend
+          predicates:
+            - Path=/**  # Match all other paths
+          filters:
+            - TokenRelay=  # Ensure authentication is enforced
 
 
 eureka:
