@@ -77,13 +77,12 @@ spring:
             - TokenRelay=
 
         - id: notification-service
-          uri: http://202.178.125.77:1084
+          uri: ws://202.178.125.77:1084  # Changed from http:// to ws:// for WebSocket
           predicates:
             - Path=/notifications/**
           filters:
             - TokenRelay=
             - RewritePath=/notifications/(?<segment>.*),/$\{segment}
-            - AddResponseHeader=Access-Control-Allow-Origin,*
 
         - id: community-engagement-service
           uri: http://202.178.125.77:1086
