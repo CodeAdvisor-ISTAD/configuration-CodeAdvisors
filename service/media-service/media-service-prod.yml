@@ -3,7 +3,7 @@ server:
 
 minio:
   server:
-    url: http://167.172.78.79:27018
+    url: http://34.143.151.53:8086
     access-key: minioadmin
     secret-key: minioadmin123
     bucket-name: files
