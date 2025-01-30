@@ -83,6 +83,7 @@ spring:
           filters:
             - TokenRelay=
             - RewritePath=/notifications/(?<segment>.*),/$\{segment}
+            - AddResponseHeader=Access-Control-Allow-Origin,*
 
         - id: community-engagement-service
           uri: http://202.178.125.77:1086
