@@ -77,7 +77,7 @@ spring:
             - TokenRelay=
 
         - id: notification-service
-          uri: ws://202.178.125.77:1084  # Changed from http:// to ws:// for WebSocket
+          uri: lb:ws://notification-service  # Changed to WebSocket protocol
           predicates:
             - Path=/notifications/**
           filters:
