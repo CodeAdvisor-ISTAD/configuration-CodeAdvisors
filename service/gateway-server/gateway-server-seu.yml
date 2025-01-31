@@ -8,7 +8,7 @@ spring:
       client:
         provider:
           code-advisor:
-            issuer-uri: http://code-advisors-identity-service:9090 
+            issuer-uri: https://identity.code-advisors.istad.co/
         registration:
           # Register CodeAdvisor Service
           code-advisor:
