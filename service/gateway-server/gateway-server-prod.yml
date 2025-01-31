@@ -69,15 +69,8 @@ spring:
             - TokenRelay=
             - RewritePath=/users/(?<segment>.*),/$\{segment}
 
-        - id: codeAdvisor-ui # Register Frontend (NextJS)
-          uri: http://202.178.125.77:1000
-          predicates:
-            - Path=/**
-          filters:
-            - TokenRelay=
-
         - id: notification-service
-          uri: lb:ws://notification-service  # Changed to WebSocket protocol
+          uri: lb://notification-service  # Changed to WebSocket protocol
           predicates:
             - Path=/notifications/**
           filters:
@@ -91,6 +84,14 @@ spring:
           filters:
             - TokenRelay=
             - RewritePath=/ces/(?<segment>.*),/$\{segment}
+
+        - id: codeAdvisor-ui # Register Frontend (NextJS)
+          uri: http://202.178.125.77:1000
+          predicates:
+            - Path=/**
+          filters:
+            - TokenRelay=
+
 
 
 eureka:
