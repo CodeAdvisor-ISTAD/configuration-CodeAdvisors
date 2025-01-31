@@ -84,7 +84,7 @@ eureka:
     fetchRegistry: true
     registerWithEureka: true
     serviceUrl:
-      defaultZone: http://202.178.125.77:1761/eureka/
+      defaultZone: http://code-advisors-eureka-server:8761/eureka
 
 
 code-advisors:
