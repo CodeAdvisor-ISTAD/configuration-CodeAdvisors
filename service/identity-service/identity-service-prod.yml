@@ -92,7 +92,7 @@ code-advisors:
   port: 1168
 
 redirect:
-  url: 202.178.125.77:1168 # https://code-advisors.istad.co/
+  url: https://code-advisors.istad.co/
 
 issuer:
-  url: http://202.178.125.77:9090
+  url: https://identity.code-advisors.istad.co
