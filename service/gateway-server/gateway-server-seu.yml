@@ -8,7 +8,7 @@ spring:
       client:
         provider:
           code-advisor:
-            issuer-uri: https://identity.code-advisors.istad.co/
+            issuer-uri: https://identity.code-advisors.istad.co
         registration:
           # Register CodeAdvisor Service
           code-advisor:
@@ -18,7 +18,7 @@ spring:
             authorization-grant-type:
               - authorization_code
             scope: openid, profile, email, ADMIN, USER
-            redirect-uri: http://code-advisors-gateway-service:8168/login/oauth2/code/code-advisor
+            redirect-uri: https://code-advisors.istad.co/login/oauth2/code/code-advisor
   cloud:
     gateway:
       discovery:
@@ -30,7 +30,7 @@ spring:
         - SaveSession
       routes:
         - id: identity # Register Identity Service
-          uri: http://code-advisors-identity-service:9090
+          uri: lb://identity-service
           predicates:
             - Path=/identity/**
           filters:
@@ -38,7 +38,7 @@ spring:
             - RewritePath=/identity/(?<segment>.*),/$\{segment}
 
         - id: content-service # Register Frontend (NextJS)
-          uri: http://code-advisors-content-service:8082
+          uri: lb://content-service
           predicates:
             - Path=/contents/**
           filters:
