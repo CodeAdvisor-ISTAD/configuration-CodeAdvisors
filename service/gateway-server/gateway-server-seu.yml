@@ -77,6 +77,14 @@ spring:
             - TokenRelay=
             - RewritePath=/notifications/(?<segment>.*),/$\{segment}
 
+        - id: community-engagement-service
+          uri: lb://community-engagement-service
+          predicates:
+            - Path=/ces/**
+          filters:
+            - TokenRelay=
+            - RewritePath=/ces/(?<segment>.*),/$\{segment}
+
         - id: codeAdvisor-ui # Register Frontend (NextJS)
           uri: http://code-advisors-ui:3000
           predicates:
