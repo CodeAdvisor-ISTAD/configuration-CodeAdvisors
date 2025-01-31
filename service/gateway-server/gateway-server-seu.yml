@@ -69,20 +69,20 @@ spring:
             - TokenRelay=
             - RewritePath=/users/(?<segment>.*),/$\{segment}
 
+        - id: notification-service
+          uri: lb://notification-service
+          predicates:
+            - Path=/notifications/**
+          filters:
+            - TokenRelay=
+            - RewritePath=/notifications/(?<segment>.*),/$\{segment}
+
         - id: codeAdvisor-ui # Register Frontend (NextJS)
           uri: http://code-advisors-ui:3000
           predicates:
             - Path=/**
           filters:
             - TokenRelay=
-
-        - id: notification-service
-          uri: http://code-advisors-notification-service:8084
-          predicates:
-            - Path=/notifications/**
-          filters:
-            - TokenRelay=
-            - RewritePath=/notifications/(?<segment>.*),/$\{segment}
 
 
 eureka:
