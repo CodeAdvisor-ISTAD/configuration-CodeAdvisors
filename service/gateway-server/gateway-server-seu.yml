@@ -8,7 +8,7 @@ spring:
       client:
         provider:
           code-advisor:
-            issuer-uri: http://202.178.125.77:9090 
+            issuer-uri: http://code-advisors-identity-service:9090 
         registration:
           # Register CodeAdvisor Service
           code-advisor:
@@ -18,7 +18,7 @@ spring:
             authorization-grant-type:
               - authorization_code
             scope: openid, profile, email, ADMIN, USER
-            redirect-uri: http://202.178.125.77:1168/login/oauth2/code/code-advisor
+            redirect-uri: http://code-advisors-gateway-service:8168/login/oauth2/code/code-advisor
   cloud:
     gateway:
       discovery:
@@ -30,7 +30,7 @@ spring:
         - SaveSession
       routes:
         - id: identity # Register Identity Service
-          uri: http://202.178.125.77:9090
+          uri: http://code-advisors-identity-service:9090
           predicates:
             - Path=/identity/**
           filters:
@@ -38,7 +38,7 @@ spring:
             - RewritePath=/identity/(?<segment>.*),/$\{segment}
 
         - id: content-service # Register Frontend (NextJS)
-          uri: http://202.178.125.77:1082
+          uri: http://code-advisors-content-service:8082
           predicates:
             - Path=/contents/**
           filters:
@@ -46,7 +46,7 @@ spring:
             - RewritePath=/contents/(?<segment>.*),/$\{segment}
 
         - id: forum-code-advisors
-          uri: http://202.178.125.77:1081
+          uri: http://code-advisors-forum-service:8081
           predicates:
             - Path=/forums/**
           filters:
@@ -54,7 +54,7 @@ spring:
             - RewritePath=/forums/(?<segment>.*),/$\{segment}
 
         - id: user-service
-          uri: http://202.178.125.77:1085
+          uri: http://code-advisors-user-service:8085
           predicates:
             - Path=/users/**
           filters:
@@ -70,14 +70,14 @@ spring:
             - RewritePath=/users/(?<segment>.*),/$\{segment}
 
         - id: codeAdvisor-ui # Register Frontend (NextJS)
-          uri: http://202.178.125.77:1000
+          uri: http://code-advisors-ui:3000
           predicates:
             - Path=/**
           filters:
             - TokenRelay=
 
         - id: notification-service
-          uri: http://202.178.125.77:1084
+          uri: http://code-advisors-notification-service:8084
           predicates:
             - Path=/notifications/**
           filters:
@@ -92,7 +92,7 @@ eureka:
     fetchRegistry: true
     registerWithEureka: true
     serviceUrl:
-      defaultZone: http://202.178.125.77:1761/eureka/
+      defaultZone: http://code-advisors-eureka-server:8761/eureka/
 
 logging:
   level:
