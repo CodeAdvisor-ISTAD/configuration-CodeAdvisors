@@ -3,15 +3,17 @@ spring:
     oauth2:
       resourceserver:
         jwt:
-          issuer-uri: http://202.178.125.77:9090 #https://identity.code-advisors.istad.co #
+          issuer-uri: https://identity.code-advisors.istad.co
       client:
         registration:
           google:
             client-id: 702679122858-60kc4e1pjeect3l56lm0r96lchpf27pt.apps.googleusercontent.com
-            client-secret: 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 
+            client-secret: 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
+            redirect-uri: https://identity.code-advisors.istad.co/login/oauth2/code/google
           github:
             client-id: Iv23ctxuu5KORhYj9WmU
             client-secret: 72a0728424dd1934bd95919b5540ffb42f02abbd
+            redirect-uri: https://identity.code-advisors.istad.co/login/oauth2/code/github
   kafka:
     bootstrap-servers:
       - 34.143.151.53:29093
