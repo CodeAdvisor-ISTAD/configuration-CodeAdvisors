@@ -7,18 +7,18 @@ spring:
     oauth2:
       client:
         provider:
-          code-advisor:
+          code-advisor-prod:
             issuer-uri: https://identity.code-advisors.istad.co
         registration:
           # Register CodeAdvisor Service
           code-advisor:
-            provider: code-advisor
-            client-id: code-advisor
-            client-secret: qwerqwer
+            provider: code-advisor-prod
+            client-id: code-advisor-prod
+            client-secret: prod-secret
             authorization-grant-type:
               - authorization_code
             scope: openid, profile, email, ADMIN, USER
-            redirect-uri: https://code-advisors.istad.co/login/oauth2/code/code-advisor
+            redirect-uri: https://code-advisors.istad.co/login/oauth2/code/code-advisor-prod
   cloud:
     gateway:
       globalcors:
