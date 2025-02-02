@@ -1,7 +1,7 @@
 server:
   port: 8168
   forward-headers-strategy: framework
-
+      
 spring:
   security:
     oauth2:
@@ -21,6 +21,17 @@ spring:
             redirect-uri: https://code-advisors.istad.co/login/oauth2/code/code-advisor
   cloud:
     gateway:
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins: "https://code-advisors.istad.co"
+            allowedMethods:
+              - GET
+              - POST
+              - PUT
+              - DELETE
+            allowedHeaders: "*"
+            allowCredentials: true
       discovery:
         locator:
           enabled: false
