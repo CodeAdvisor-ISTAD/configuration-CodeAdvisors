@@ -49,7 +49,7 @@ spring:
             - RewritePath=/identity/(?<segment>.*),/$\{segment}
 
         - id: content-service # Register Frontend (NextJS)
-          uri: lb://content-service
+          uri: http://code-advisors-content-service:8082
           predicates:
             - Path=/contents/**
           filters:
