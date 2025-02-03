@@ -8,6 +8,7 @@ spring:
       resourceserver:
         jwt:
           issuer-uri: http://202.178.125.77:9090 #https://identity.code-advisors.istad.co #
+          token-uri: http://202.178.125.77:9090/oauth2/token
   datasource:
     driver-class-name: org.postgresql.Driver
     url: jdbc:postgresql://202.178.125.77:5401/postgres
