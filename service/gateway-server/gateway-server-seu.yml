@@ -12,8 +12,8 @@ spring:
         registration:
           # Register CodeAdvisor Service
           code-advisor:
-            provider: code-advisor-prod
-            client-id: code-advisor-prod
+            provider: code-advisor
+            client-id: qwerqwer
             client-secret: prod-secret
             authorization-grant-type:
               - authorization_code
