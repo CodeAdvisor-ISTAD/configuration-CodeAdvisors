@@ -72,8 +72,8 @@ spring:
         - SaveSession
       routes:
         - id: identity # Register Identity Service
-          uri: lb://identity-service
-          # uri: http://35.225.212.218:8086
+          # uri: lb://identity-service
+          uri: http://35.225.212.218:8086
           predicates:
             - Path=/identity/**
           filters:
