@@ -3,7 +3,7 @@ spring:
     oauth2:
       resourceserver:
         jwt:
-          issuer-uri: https://identity.code-advisors.istad.co #
+          issuer-uri: https://identity.code-advisors.istad.co
       client:
         registration:
           google:
