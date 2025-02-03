@@ -137,11 +137,11 @@ spring:
 
 
 eureka:
-  instance:
-    preferIpAddress: true
+  # instance:
+  #   preferIpAddress: true
   client:
-    fetchRegistry: true
-    registerWithEureka: true
+    # fetchRegistry: true
+    # registerWithEureka: true
     serviceUrl:
       defaultZone: http://code-advisors-eureka-server:8761/eureka/
 
