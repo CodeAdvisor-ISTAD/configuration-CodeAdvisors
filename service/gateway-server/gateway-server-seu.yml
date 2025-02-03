@@ -7,7 +7,7 @@ spring:
     oauth2:
       client:
         provider:
-          code-advisor-prod:
+          code-advisor:
             issuer-uri: https://identity.code-advisors.istad.co
         registration:
           # Register CodeAdvisor Service
