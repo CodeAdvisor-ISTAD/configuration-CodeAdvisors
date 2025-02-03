@@ -7,23 +7,48 @@ spring:
     oauth2:
       client:
         provider:
-          code-advisor:
-            issuer-uri: https://identity.code-advisors.istad.co
-            authorization-uri: https://identity.code-advisors.istad.co/oauth2/authorize
-            token-uri: https://identity.code-advisors.istad.co/oauth2/token
+          nextjs:
+            issuer-uri: https://khotixs-auth.devkh.asia
+            authorization-uri: https://khotixs-auth.devkh.asia/oauth2/authorize
+            token-uri: https://khotixs-auth.devkh.asia/oauth2/token
+        #            user-info-uri: ${USER_INFO_URI}
+
         registration:
-          # Register CodeAdvisor Service
-          code-advisor:
-            provider: code-advisor
-            client-id: code-advisor
-            client-secret: qwerqwer
+          nextjs:
+            provider: nextjs
+            client-id: nextjs
+            client-secret: nextjs123
             authorization-grant-type:
               - authorization_code
-            scope: openid, profile, email, ADMIN, USER
-            redirect-uri: https://code-advisors.istad.co/login/oauth2/code/code-advisor
+            scope:
+              - openid
+              - profile
+              - email
+            redirect-uri: ${REDIRECT_URI}
             client-authentication-method:
               - client_secret_post
               - client_secret_basic
+  # security:
+  #   oauth2:
+  #     client:
+  #       provider:
+  #         code-advisor:
+  #           issuer-uri: https://identity.code-advisors.istad.co
+  #           authorization-uri: https://identity.code-advisors.istad.co/oauth2/authorize
+  #           token-uri: https://identity.code-advisors.istad.co/oauth2/token
+  #       registration:
+  #         # Register CodeAdvisor Service
+  #         code-advisor:
+  #           provider: code-advisor
+  #           client-id: code-advisor
+  #           client-secret: qwerqwer
+  #           authorization-grant-type:
+  #             - authorization_code
+  #           scope: openid, profile, email, ADMIN, USER
+  #           redirect-uri: https://code-advisors.istad.co/login/oauth2/code/code-advisor
+  #           client-authentication-method:
+  #             - client_secret_post
+  #             - client_secret_basic
   cloud:
     gateway:
       # globalcors:
@@ -47,7 +72,8 @@ spring:
         - SaveSession
       routes:
         - id: identity # Register Identity Service
-          uri: lb://identity-service
+          # uri: lb://identity-service
+          uri: http://35.225.212.218:8086
           predicates:
             - Path=/identity/**
           filters:
