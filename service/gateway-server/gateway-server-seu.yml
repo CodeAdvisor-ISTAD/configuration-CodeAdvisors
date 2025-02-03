@@ -13,8 +13,8 @@ spring:
           # Register CodeAdvisor Service
           code-advisor:
             provider: code-advisor
-            client-id: qwerqwer
-            client-secret: prod-secret
+            client-id: code-advisor
+            client-secret: qwerqwer
             authorization-grant-type:
               - authorization_code
             scope: openid, profile, email, ADMIN, USER
