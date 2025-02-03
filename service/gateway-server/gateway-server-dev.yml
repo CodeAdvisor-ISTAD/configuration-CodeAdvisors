@@ -41,7 +41,6 @@ spring:
           enabled: false
           lower-case-service-id: true
       default-filters:
-        - DedupeResponseHeader=Access-Control-Allow-Credentials Access-Control-Allow-Origin Access-Control-Request-Headers
         - SaveSession
       routes:
         - id: identity # Register Identity Service
@@ -107,12 +106,12 @@ spring:
             - TokenRelay=
             - RewritePath=/users/(?<segment>.*),/$\{segment}
 
-        - id: codeAdvisor-ui # Register Frontend (NextJS)
-          uri: http://127.0.0.1:3000
-          predicates:
-            - Path=/**
-          filters:
-            - TokenRelay=
+        # - id: codeAdvisor-ui # Register Frontend (NextJS)
+        #   uri: http://127.0.0.1:3000
+        #   predicates:
+        #     - Path=/**
+        #   filters:
+        #     - TokenRelay=
 
 eureka:
   instance:
