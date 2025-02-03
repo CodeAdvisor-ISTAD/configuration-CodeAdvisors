@@ -34,8 +34,8 @@ spring:
         provider:
           code-advisor:
             issuer-uri: https://identity.code-advisors.istad.co
-            authorization-uri: https://identity.code-advisors.istad.co/oauth2/authorize
-            token-uri: https://identity.code-advisors.istad.co/oauth2/token
+            # authorization-uri: https://identity.code-advisors.istad.co/oauth2/authorize
+            # token-uri: https://identity.code-advisors.istad.co/oauth2/token
         registration:
           # Register CodeAdvisor Service
           code-advisor:
