@@ -41,8 +41,8 @@ spring:
           enabled: false
           lower-case-service-id: true
       default-filters:
-        # - DedupeResponseHeader=Access-Control-Allow-Credentials Access-Control-Allow-Origin Access-Control-Request-Headers
-        - DedupeResponseHeader=Set-Cookie
+        - DedupeResponseHeader=Access-Control-Allow-Credentials Access-Control-Allow-Origin Access-Control-Request-Headers
+        # - DedupeResponseHeader=Set-Cookie
         - SaveSession
       routes:
         - id: identity # Register Identity Service
