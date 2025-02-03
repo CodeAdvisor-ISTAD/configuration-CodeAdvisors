@@ -23,9 +23,12 @@ spring:
       key-store-password: password123
       key-password: password123
     bootstrap-servers:
-      - 167.172.78.79:29093
-      - 167.172.78.79:39093
-      - 167.172.78.79:49093
+      # - 167.172.78.79:29093
+      # - 167.172.78.79:39093
+      # - 167.172.78.79:49093
+      - 34.143.151.53:29093
+      - 34.143.151.53:39093
+      - 34.143.151.53:49093
     producer:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
