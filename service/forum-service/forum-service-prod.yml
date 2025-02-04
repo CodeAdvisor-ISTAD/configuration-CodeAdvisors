@@ -49,5 +49,19 @@ logging:
     root: INFO
     org.springframework.security: debug
 
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+  endpoint:
+    health:
+      show-details: always
+  health:
+    livenessstate:
+      enabled: true
+    readinessstate:
+      enabled: true
+
 server:
   port: 8081
