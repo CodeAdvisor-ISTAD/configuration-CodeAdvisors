@@ -13,6 +13,8 @@ spring:
 #            user-name-attribute: sub
           code-advisor:
             issuer-uri: http://127.0.0.1:9090
+            authorization-uri: http://127.0.0.1:9090/oauth2/authorize
+            token-uri: http://127.0.0.1:9090/oauth2/token
         registration:
 #           Register google Service
 #          google:
