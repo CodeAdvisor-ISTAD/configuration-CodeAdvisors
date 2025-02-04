@@ -97,7 +97,7 @@ spring:
             - RewritePath=/forums/(?<segment>.*),/$\{segment}
 
         - id: user-service
-          uri: http://code-advisors-user-service:8085
+          uri: http://code-advisors-user-profile-service:8085
           predicates:
             - Path=/users/**
           filters:
