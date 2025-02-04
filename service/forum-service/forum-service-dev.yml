@@ -8,7 +8,6 @@ spring:
       resourceserver:
         jwt:
           issuer-uri: http://127.0.0.1:9090
-          token-uri: http://127.0.0.1:9090/oauth2/token
   datasource:
     driver-class-name: org.postgresql.Driver
     url: jdbc:postgresql://202.178.125.77:5401/postgres
