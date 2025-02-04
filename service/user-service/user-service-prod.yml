@@ -3,7 +3,7 @@ spring:
     oauth2:
       resourceserver:
         jwt:
-          issuer-uri: http://202.178.125.77:9090
+          issuer-uri: https://identity.code-advisors.istad.co
   data:
     mongodb:
       uri: mongodb://202.178.125.77:5403/user-service
@@ -11,23 +11,23 @@ spring:
     security:
       protocol: SSL
     ssl:
-        trust-store-location: classpath:kafka.server.truststore.jks
-        trust-store-password: password123
-        key-store-location: classpath:kafka.server.keystore.jks
-        key-store-password: password123
-        key-password: password123
+      trust-store-location: file:/app/kafka.server.truststore.jks
+      trust-store-password: password123
+      key-store-location: file:/app/kafka.server.keystore.jks
+      key-store-password: password123
+      key-password: password123
     producer:
       bootstrap-servers:
-        - 167.172.78.79:29093
-        - 167.172.78.79:39093
-        - 167.172.78.79:49093
+        - 34.143.151.53:29093
+        - 34.143.151.53:39093
+        - 34.143.151.53:49093
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
     consumer:
       bootstrap-servers:
-        - 167.172.78.79:29093
-        - 167.172.78.79:39093
-        - 167.172.78.79:49093
+        - 34.143.151.53:29093
+        - 34.143.151.53:39093
+        - 34.143.151.53:49093
       group-id: user-service
       auto-offset-reset: earliest
       key-deserializer: org.springframework.kafka.support.serializer.ErrorHandlingDeserializer
