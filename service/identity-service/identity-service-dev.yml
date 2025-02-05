@@ -46,7 +46,7 @@ spring:
       key-password: password123
   jpa:
     hibernate:
-      ddl-auto: create-drop
+      ddl-auto: update
   datasource:
     url: jdbc:postgresql://202.178.125.77:5402/oauth2
     username: oauth2
