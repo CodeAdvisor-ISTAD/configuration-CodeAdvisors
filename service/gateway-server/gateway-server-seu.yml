@@ -113,7 +113,7 @@ spring:
             - RewritePath=/users/(?<segment>.*),/$\{segment}
 
         - id: notification-service
-          uri: lb://notification-service
+          uri: http://202.178.125.77:1084
           predicates:
             - Path=/notifications/**
           filters:
@@ -121,7 +121,7 @@ spring:
             - RewritePath=/notifications/(?<segment>.*),/$\{segment}
 
         - id: community-engagement-service
-          uri: lb://community-engagement-service
+          uri: http://202.178.125.77:1086
           predicates:
             - Path=/ces/**
           filters:
