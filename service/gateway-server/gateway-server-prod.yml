@@ -70,7 +70,7 @@ spring:
             - RewritePath=/users/(?<segment>.*),/$\{segment}
 
         - id: notification-service
-          uri: lb://notification-service  # Changed to WebSocket protocol
+          uri: http://202.178.125.77:1084
           predicates:
             - Path=/notifications/**
           filters:
