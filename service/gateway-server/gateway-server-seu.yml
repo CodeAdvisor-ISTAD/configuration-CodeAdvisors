@@ -113,7 +113,7 @@ spring:
             - RewritePath=/users/(?<segment>.*),/$\{segment}
 
         - id: notification-service
-          uri: http://202.178.125.77:1084
+          uri: http://code-advisors-notification-service:8084
           predicates:
             - Path=/notifications/**
           filters:
