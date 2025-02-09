@@ -52,7 +52,7 @@ spring:
             authorization-grant-type:
               - authorization_code
             scope: openid, profile, email, ADMIN, USER
-            redirect-uri: http://127.0.0.1:1168/login/oauth2/code/code-advisor #https://code-advisors.istad.co/login/oauth2/code/code-advisor  
+            redirect-uri: http://127.0.0.1:8168/login/oauth2/code/code-advisor #https://code-advisors.istad.co/login/oauth2/code/code-advisor  
   cloud:
     gateway:
       discovery:
