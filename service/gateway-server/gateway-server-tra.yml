@@ -129,7 +129,7 @@ spring:
             - RewritePath=/ces/(?<segment>.*),/$\{segment}
 
         - id: codeAdvisor-ui # Register Frontend (NextJS)
-          uri: http://code-advisors-ui:3000
+          uri: http://127.0.0.1:3000
           predicates:
             - Path=/**
           filters:
