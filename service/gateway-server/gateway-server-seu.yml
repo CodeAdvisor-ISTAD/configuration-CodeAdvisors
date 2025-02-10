@@ -105,7 +105,7 @@ spring:
             - RewritePath=/users/(?<segment>.*),/$\{segment}
 
         - id: media-service
-          uri: http://167.172.78.79:8090
+          uri: http://code-advisors-media-service:8090
           predicates:
             - Path=/media/**
           filters:
