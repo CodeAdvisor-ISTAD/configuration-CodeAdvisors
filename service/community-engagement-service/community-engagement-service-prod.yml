@@ -5,7 +5,7 @@ spring:
     oauth2:
       resourceserver:
         jwt:
-          issuer-uri: http://202.178.125.77:9090
+          issuer-uri: https://identity.code-advisors.istad.co
   data:
     mongodb:
       # uri: mongodb://localhost:27017/content-service
